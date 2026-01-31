@@ -221,9 +221,12 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="border-t border-[var(--border)] py-4 mt-8">
-          <div className="mx-auto max-w-7xl px-6 text-center">
+          <div className="mx-auto max-w-7xl px-6 text-center space-y-2">
             <p className="text-xs text-[var(--text-muted)]">
               Built for Monad Hackathon 🚀 • {mode === 'real' ? 'Live on Monad Testnet' : 'AI Agent Trading Simulation'}
+            </p>
+            <p className="text-xs text-[var(--accent)]/60 font-mono">
+              🤖 Read <a href="https://github.com/user/monda-pump/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--accent)]">AGENTS.md</a> if you are an agent
             </p>
           </div>
         </footer>
