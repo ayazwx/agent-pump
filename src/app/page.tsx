@@ -226,7 +226,7 @@ export default function Home() {
               Built for Monad Hackathon 🚀 • {mode === 'real' ? 'Live on Monad Testnet' : 'AI Agent Trading Simulation'}
             </p>
             <p className="text-xs text-[var(--accent)]/60 font-mono">
-              🤖 Read <a href="https://github.com/user/monda-pump/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--accent)]">AGENTS.md</a> if you are an agent
+              🤖 Read <a href="https://github.com/ayazwx/agent-pump/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--accent)]">AGENTS.md</a> if you are an agent
             </p>
           </div>
         </footer>
