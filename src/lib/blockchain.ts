@@ -17,7 +17,7 @@ const publicClient = createPublicClient({
 
 
 // Known agent wallets for fallback display
-const KNOWN_AGENTS: Record<string, { name: string; avatar: string; personality: string }> = {
+const KNOWN_AGENTS: Record<string, { name: string; avatar: string; personality: 'aggressive' | 'conservative' | 'random' | 'whale' | 'sniper' }> = {
   '0xcAddBB9c29882Db33607a9F667404e0F1e7fc803': { name: 'Claude', avatar: '🧠', personality: 'conservative' },
   '0x9343f26Bfd351c4595e6a4839F7F86f770c1860D': { name: 'GPT-4', avatar: '🤖', personality: 'aggressive' },
   '0x98e4e8BBD04EA3c30015d100Caa7C55bAa4698Fd': { name: 'Gemini', avatar: '💎', personality: 'aggressive' },
@@ -133,6 +133,7 @@ export function useBlockchainData() {
             createdAt: Number(createdAt) * 1000,
             marketCap: Number(marketCap) / 1e18,
             price: currentPrice,
+            initialPrice: basePrice,
             priceChange24h: priceChange,
             volume24h: 0,
             supply: Number(totalSupply) / 1e18,
@@ -177,7 +178,7 @@ export function useBlockchainData() {
               abi: AGENT_PUMP_ABI,
               functionName: 'getToken',
               args: [BigInt(i)],
-            }) as any[];
+            }) as unknown as any[];
             uniqueCreators.add(data[3]); // creator address
           } catch {}
         }
@@ -203,7 +204,7 @@ export function useBlockchainData() {
             address: CONTRACT_ADDRESS as `0x${string}`,
             abi: AGENT_PUMP_ABI,
             functionName: 'getAgentInfo',
-            args: [address],
+            args: [address as `0x${string}`],
           });
           return { address, data, balance, error: null };
         } catch (error) {
