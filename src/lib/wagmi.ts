@@ -29,7 +29,7 @@ export const config = createConfig({
 });
 
 // Contract address - set via env or after deployment
-export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || '';
+export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || '0x057B6Bd0474BfFf57c3c6979b09c70F4932D36D4';
 
 export const AGENT_PUMP_ABI = [
   // Events
